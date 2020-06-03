@@ -8,7 +8,7 @@ There are two roles, Manager and Assistant.
 * An Assistant has permission to create and update artists, releases and tracks. An Assistant does not have permission to delete artists, releases or tracks.
 * A Manager has permission to create, update and delete artists, releases and tracks.
 
-The application has been deployed at `https://musicakes.herokuapp.com`, which currently displays "Welcome to Musicakes!"
+The application has been deployed at `https://musicakes-api-fsnd.herokuapp.com/`, which currently displays "Welcome to Musicakes!"
 
 ## Getting Started
 
@@ -79,7 +79,7 @@ Setting the `FLASK_APP` variable to `app` directs flask to use the `app.py` appl
 
 #### Heroku Deployment
 
-The application has already been deployed at `https://musicakes.herokuapp.com`.
+The application has already been deployed at `https://musicakes-api-fsnd.herokuapp.com/`.
 
 To obtain a Manager or Assistant access token:
 1. Navigate to Auth0 login URL: `https://fsndgt.au.auth0.com/authorize?audience=dev&response_type=token&client_id=k0UiQ1k69kaVYwB7Os4lep8kHQRTj1do&redirect_uri=http://127.0.0.1:5000/artists`
@@ -151,12 +151,12 @@ The API will return the following error types when requests fail:
 
 ### Endpoints
 
-For local testing, please replace `https://musicakes.herokuapp.com` with your local host address.
+For local testing, please replace `https://musicakes-api-fsnd.herokuapp.com/` with your local host address.
 
 #### GET /artists
 * General
   * Gets information of all artists
-* Sample: `curl https://musicakes.herokuapp.com/artists`
+* Sample: `curl https://musicakes-api-fsnd.herokuapp.com/artists`
 
 ```
 {
@@ -200,7 +200,7 @@ For local testing, please replace `https://musicakes.herokuapp.com` with your lo
 #### GET /releases
 * General
   * Gets information of all releases
-* Sample: `curl https://musicakes.herokuapp.com/releases`
+* Sample: `curl https://musicakes-api-fsnd.herokuapp.com/releases`
 
 ```
 {
@@ -243,7 +243,7 @@ For local testing, please replace `https://musicakes.herokuapp.com` with your lo
 #### GET /tracks
 * General
   * Gets information of all tracks
-* Sample: `curl https://musicakes.herokuapp.com/tracks`
+* Sample: `curl https://musicakes-api-fsnd.herokuapp.com/tracks`
 
 ```
 {
@@ -293,7 +293,7 @@ For local testing, please replace `https://musicakes.herokuapp.com` with your lo
 #### POST /artists
 * General
   * Creates an artist with the following request arguments: name, country
-* Sample: `curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer <<MANAGER_TOKEN or ASSISTANT_TOKEN>>" -d '{ "name": "shampoo", "country": "UK" }' https://musicakes.herokuapp.com/artists` - replace "<<MANAGER_TOKEN or ASSISTANT_TOKEN>>" with MANAGER_TOKEN or ASSISTANT_TOKEN
+* Sample: `curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer <<MANAGER_TOKEN or ASSISTANT_TOKEN>>" -d '{ "name": "shampoo", "country": "UK" }' https://musicakes-api-fsnd.herokuapp.com/artists` - replace "<<MANAGER_TOKEN or ASSISTANT_TOKEN>>" with MANAGER_TOKEN or ASSISTANT_TOKEN
 
 ```
 {
@@ -306,7 +306,7 @@ For local testing, please replace `https://musicakes.herokuapp.com` with your lo
 #### POST /releases
 * General
   * Creates a release with the following request arguments: name, artist_id, price
-* Sample: `curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer <<MANAGER_TOKEN or ASSISTANT_TOKEN>>" -d '{ "name": "Forgotten Times", "artist_id": 1, "price": 5 }' https://musicakes.herokuapp.com/releases` - replace "<<MANAGER_TOKEN or ASSISTANT_TOKEN>>" with MANAGER_TOKEN or ASSISTANT_TOKEN
+* Sample: `curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer <<MANAGER_TOKEN or ASSISTANT_TOKEN>>" -d '{ "name": "Forgotten Times", "artist_id": 1, "price": 5 }' https://musicakes-api-fsnd.herokuapp.com/releases` - replace "<<MANAGER_TOKEN or ASSISTANT_TOKEN>>" with MANAGER_TOKEN or ASSISTANT_TOKEN
 
 ```
 {
@@ -320,7 +320,7 @@ For local testing, please replace `https://musicakes.herokuapp.com` with your lo
 #### POST /tracks
 * General
   * Creates a track with the following request arguments: name, release_id, artist_id, price
-* Sample: `curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer <<MANAGER_TOKEN or ASSISTANT_TOKEN>>" -d '{ "name": "Forgotten Past", "release_id": 1, "artist_id": 1, "price": 1 }' https://musicakes.herokuapp.com/tracks` - replace "<<MANAGER_TOKEN or ASSISTANT_TOKEN>>" with MANAGER_TOKEN or ASSISTANT_TOKEN
+* Sample: `curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer <<MANAGER_TOKEN or ASSISTANT_TOKEN>>" -d '{ "name": "Forgotten Past", "release_id": 1, "artist_id": 1, "price": 1 }' https://musicakes-api-fsnd.herokuapp.com/tracks` - replace "<<MANAGER_TOKEN or ASSISTANT_TOKEN>>" with MANAGER_TOKEN or ASSISTANT_TOKEN
 
 ```
 {
@@ -335,7 +335,7 @@ For local testing, please replace `https://musicakes.herokuapp.com` with your lo
 #### PATCH /artists/<int:id>
 * General
   * Updates an artist's information
-* Sample: `curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer <<MANAGER_TOKEN or ASSISTANT_TOKEN>>" -d '{ "name": "Tsergggy", "country": "Tuvalu" }' https://musicakes.herokuapp.com/artists/1` - replace "<<MANAGER_TOKEN or ASSISTANT_TOKEN>>" with MANAGER_TOKEN or ASSISTANT_TOKEN
+* Sample: `curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer <<MANAGER_TOKEN or ASSISTANT_TOKEN>>" -d '{ "name": "Tsergggy", "country": "Tuvalu" }' https://musicakes-api-fsnd.herokuapp.com/artists/1` - replace "<<MANAGER_TOKEN or ASSISTANT_TOKEN>>" with MANAGER_TOKEN or ASSISTANT_TOKEN
 
 ```
 {
@@ -348,7 +348,7 @@ For local testing, please replace `https://musicakes.herokuapp.com` with your lo
 #### PATCH /releases/<int:id>
 * General
   * Updates a release's information
-* Sample: `curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer <<MANAGER_TOKEN or ASSISTANT_TOKEN>>" -d '{ "name": "Forgotten Times 2", "price": 10, "artist_id": 3 }' https://musicakes.herokuapp.com/releases/1` - replace "<<MANAGER_TOKEN or ASSISTANT_TOKEN>>" with MANAGER_TOKEN or ASSISTANT_TOKEN
+* Sample: `curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer <<MANAGER_TOKEN or ASSISTANT_TOKEN>>" -d '{ "name": "Forgotten Times 2", "price": 10, "artist_id": 3 }' https://musicakes-api-fsnd.herokuapp.com/releases/1` - replace "<<MANAGER_TOKEN or ASSISTANT_TOKEN>>" with MANAGER_TOKEN or ASSISTANT_TOKEN
 
 ```
 {
@@ -362,7 +362,7 @@ For local testing, please replace `https://musicakes.herokuapp.com` with your lo
 #### PATCH /tracks/<int:id>
 * General
   * Updates a track's information
-* Sample: `curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer <<MANAGER_TOKEN or ASSISTANT_TOKEN>>" -d '{ "name": "Forgotten Now", "price": 2, "release_id": 2, "artist_id": 3 }' https://musicakes.herokuapp.com/tracks/1` - replace "<<MANAGER_TOKEN or ASSISTANT_TOKEN>>" with MANAGER_TOKEN or ASSISTANT_TOKEN
+* Sample: `curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer <<MANAGER_TOKEN or ASSISTANT_TOKEN>>" -d '{ "name": "Forgotten Now", "price": 2, "release_id": 2, "artist_id": 3 }' https://musicakes-api-fsnd.herokuapp.com/tracks/1` - replace "<<MANAGER_TOKEN or ASSISTANT_TOKEN>>" with MANAGER_TOKEN or ASSISTANT_TOKEN
 
 ```
 {
@@ -377,7 +377,7 @@ For local testing, please replace `https://musicakes.herokuapp.com` with your lo
 #### DELETE /releases/<int:id>
 * General
   * Deletes an artist, and all releases and tracks associated with that artist
-* Sample: `curl -X DELETE -H "Authorization: Bearer <<MANAGER_TOKEN>>" https://musicakes.herokuapp.com/artists/1` - replace "<<MANAGER_TOKEN>>" with MANAGER_TOKEN
+* Sample: `curl -X DELETE -H "Authorization: Bearer <<MANAGER_TOKEN>>" https://musicakes-api-fsnd.herokuapp.com/artists/1` - replace "<<MANAGER_TOKEN>>" with MANAGER_TOKEN
 
 ```
 {
@@ -388,7 +388,7 @@ For local testing, please replace `https://musicakes.herokuapp.com` with your lo
 #### DELETE /releases/<int:id>
 * General
   * Deletes a release and all tracks in that release
-* Sample: `curl -X DELETE -H "Authorization: Bearer <<MANAGER_TOKEN>>" https://musicakes.herokuapp.com/releases/2` - replace "<<MANAGER_TOKEN>>" with MANAGER_TOKEN
+* Sample: `curl -X DELETE -H "Authorization: Bearer <<MANAGER_TOKEN>>" https://musicakes-api-fsnd.herokuapp.com/releases/2` - replace "<<MANAGER_TOKEN>>" with MANAGER_TOKEN
 
 ```
 {
@@ -399,7 +399,7 @@ For local testing, please replace `https://musicakes.herokuapp.com` with your lo
 #### DELETE /tracks/<int:id>
 * General
   * Deletes a track
-* Sample: `curl -X DELETE -H "Authorization: Bearer <<MANAGER_TOKEN>>" https://musicakes.herokuapp.com/tracks/5` - replace "<<MANAGER_TOKEN>>" with MANAGER_TOKEN
+* Sample: `curl -X DELETE -H "Authorization: Bearer <<MANAGER_TOKEN>>" https://musicakes-api-fsnd.herokuapp.com/tracks/5` - replace "<<MANAGER_TOKEN>>" with MANAGER_TOKEN
 
 ```
 {
